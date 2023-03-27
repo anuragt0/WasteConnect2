@@ -6,8 +6,12 @@ const BuySchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true
   },
+  buyer_name: {
+    type: String
+  },
   residue_type:{
     type: String,
+    required: true
   },
   info: {
     type: String,

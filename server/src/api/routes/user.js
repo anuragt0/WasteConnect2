@@ -94,11 +94,13 @@ router.post("/sell-order", fetchPerson, async (req,res)=>{
     //must have auth-token in header
     const sellOrder = req.body;
     const seller_id = req.mongoId;
-    sellOrder.seller_id = seller_id;
     try {
+        const userDoc = await User.findById(seller_id);
+        sellOrder.seller_id = seller_id;
+        sellOrder.seller_name = userDoc.name;
         const newOrder = new SellOrder(sellOrder);
         await newOrder.save();
-        return res.status(200).json({success:true, message: "Sell order placed successfully"})
+        return res.status(200).json({success:true, message: "Sell order placed successfully", sellOrder: newOrder})
     } catch (error) {
         console.log(error.message);
         return res.status(501).json({success: false, message: "Internal server error" })
@@ -162,11 +164,14 @@ router.post("/buy-order", fetchPerson, async (req,res)=>{
     //must have auth-token in header
     const buyOrder = req.body;
     const buyer_id = req.mongoId;
-    buyOrder.buyer_id = buyer_id;
+
     try {
+        const userDoc = await User.findById(buyer_id);
+        buyOrder.buyer_name = userDoc.name;
+        buyOrder.buyer_id = buyer_id;
         const newOrder = new BuyOrder(buyOrder);
         await newOrder.save();
-        return res.status(200).json({success:true, message: "Buy order placed successfully"})
+        return res.status(200).json({success:true, message: "Buy order placed successfully", buyOrder: newOrder})
     } catch (error) {
         console.log(error.message);
         return res.status(501).json({success: false, message: "Internal server error" })
@@ -235,6 +240,24 @@ router.post("/add-rental-service", async (req,res)=>{
     }
 })
 
+router.get("/sell-orders", async (req,res)=>{
+    try {
+        const allSellOrders = await SellOrder.find();
+        res.status(200).json({success:true, message: "Retrieved all sell orders", sellOrders: allSellOrders});
+    } catch (error) {
+        console.log(error.message);
+        return res.status(501).json({success: false, message: "Internal server error" })
+    }
+})
 
+router.get("/buy-orders", async (req,res)=>{
+    try {
+        const allBuyOrders = await BuyOrder.find();
+        res.status(200).json({success:true, message: "Retrieved all buy orders", buyOrders: allBuyOrders});
+    } catch (error) {
+        console.log(error.message);
+        return res.status(501).json({success: false, message: "Internal server error" })
+    }
+})
 
 module.exports = router;

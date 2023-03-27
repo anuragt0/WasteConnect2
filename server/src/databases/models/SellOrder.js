@@ -6,6 +6,9 @@ const SellSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true
   },
+  seller_name:{
+    type: String
+  },
   residue_type:{
     type: String,
   },
