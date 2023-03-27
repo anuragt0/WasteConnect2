@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const connectToMongoDB = () => {
+    console.log(process.env.MONGODB_ATLAS_URI);
   mongoose
     .connect(process.env.MONGODB_ATLAS_URI)
     .then(() => {

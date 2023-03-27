@@ -8,13 +8,14 @@ app.use(express.json()); // to use req.body
 
 // Mine
 const connectToMongoDB = require("./src/databases/config");
-// connectToMongoDB();
+connectToMongoDB();
 
 //routes
 app.get("/", (req,res)=>{
     res.send("Heyy I am working fine!");
 })
-app.use("/api/public", require("./src/api/routes/public"))
+app.use("/api/public", require("./src/api/routes/public"));
+app.use("/api/user", require("./src/api/routes/user"));
 
 
 app.listen(5000, ()=>{
