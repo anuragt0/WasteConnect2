@@ -6,7 +6,7 @@ import Home from "./componentes/Home";
 import Sell from "./componentes/Sell";
 import Buy from "./componentes/Buy";
 import Services from "./componentes/Services";
-
+import "./App.css";
 
 function App() {
   return (

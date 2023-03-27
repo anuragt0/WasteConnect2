@@ -1,38 +1,256 @@
-.App {
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  font-family:sans-serif;
+}
+.head {
+  padding: 0px 100px;
+  color: black;
+  position:fixed;
+  /* background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F03%2F57%2F54%2F77%2F360_F_357547735_aTZvm1ec8Uzgsd1aTukmFiOw4iXX2aKS.jpg&tbnid=95tp8wuaUBnE6M&vet=12ahUKEwjvzqSzh_n9AhXDmOYKHZJ6Dm4QMygHegUIARD1AQ..i&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fbg%2Fsearch%2Fimages%3Fk%3Dfertilizer%2520agriculture&docid=0x6PcmNaBtY44M&w=640&h=360&itg=1&q=agriculture%20hd%20images&ved=2ahUKEwjvzqSzh_n9AhXDmOYKHZJ6Dm4QMygHegUIARD1AQ); */
+  background-color: white;
+  z-index: 99;
+}
+.container {
+  max-width: 100%;
+  margin: auto;
+}
+.flexSB {
+  display: flex;
+  justify-content:space-between;
+}
+.logo {
+  display: flex;
+  height: 50px;
+}
+.logo1{
+  display: flex;
+  height: 70px;
+  padding-top: 0;
+  
+}
+.social{
+  padding-left: 53rem;
+  display: flex; 
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  /* text-align: center; */
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  transition: 0.5s;
+  padding-left: 13px;
+  margin-left: 10px;
+}
+.icon:hover {
+  cursor: pointer;
+  background-color: #0a2647;
+  color: #fff;
+}
+/*-------------------2nd navbar------------------------*/
+
+/* .hd {
+  background-color: red;
+  margin: 0 0px 0px 70px;
+  box-sizing: border-box;
+  width: 90%;
+  box-shadow: 0px 5px 5px 0px rgb(0, 0, 0, 0.3);
+  
+}
+ nav {
+  display: flex !important;
+}
+.hd li {
+  margin-right: 40px;
+}
+.hd ul {
+  padding: 25px 50px;
+}
+.hd ul li a {
+  color: black;
+  font-weight: 500;
+  transition: 0.5s;
+  font-size: 20px;
+}
+.hd ul li a:hover {
+  color: #0a2647;
+} */
+
+.NavbarItems{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0 30px;
+  background-color:#2b4416;
+  box-shadow: 0 5p 15px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  height: 70px;
+  border-radius: 10px;
+  margin-left: 2rem;
+  margin-bottom: 10px;
+}
+.nav-menu{
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-gap:10px;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  justify-content: end;
+}
+.fa-solid{
+  padding-right: 5px;
+}
+.nav-menu a{
+  text-decoration: none;
+  color: #fdea9e;
+  padding: 0.4rem 0.6rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.oth{
+  display: flex;
+  padding-left: 20rem;
+}
+.login{
+  
+  box-sizing: border-box;
+  border: 1.5px solid white;
+  /* background-color: #fafafa; */
+  border-radius: 100px;
+  margin-right: 2rem;
+  margin-left: 3rem;
+  font-size: 15px;
+  
+}
+.signup{
+   
+  box-sizing: border-box;
+  border: 1.5px solid white;
+  /* background-color: #fafafa; */
+  border-radius: 100px;
+  font-size: 15px;
+}
+
+/*-----------------------home-----------------*/
+
+.h{
+  background-color: white;
+  height: 45rem;
+  padding-top: 10rem;
+  display: flex;
+  background-size: cover;
+  background-image: url(../src/componentes/images1/bg1.png);  
+}
+.left{
+  width: 40%;
+  background-color: #44312b;
+  height: 15rem;
+  margin-left: 7rem;
+  margin-top: 8rem;
+  opacity: 0.85;
+}
+.right{
+  width: 33%;
+  background-color: #5f4825;
+  height: 28rem;
+  margin-left: 12rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+  
+  border: 2px solid #5f4825;
+}
+.right h2{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left h1{
+  padding-top: 2rem;
+  text-align: center;
+  font-size:40px;
+  color: #d7f19d;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left p{
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 25px;
+  color:rgb(241, 184, 109);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.border{
+  height: 15rem;
+  width: 40%;
+  box-sizing: border-box;
+  border:3px solid #fafafa;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 7rem;
+  margin-left: 6rem;
+  position: absolute;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/*--------------------------page2-------------------*/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page2{
+  background-color: white;
+  height: 60rem;
+  display: flex;
+}
+.services{
+  height: 10rem;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 15px #888888;
+  width: 25rem;
+  opacity: 0.8;
+  position: absolute;
+  margin-top: 32rem;
+  margin-left: 30rem;
+}
+.services h1{
+  text-align: center;
+  padding-top: 3rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.outer-box{
+  height: 35rem;
+  width: 80%;
+  background-color: rgb(3, 139, 202);
+  margin-top: 10rem;
+  margin-left: 15rem;
+  
+}
+.outer-box p{
+color: white;
+text-align: center;
+padding-top: 4rem;
+padding-left: 10rem;
+font-family:sans-serif;
+font-size: 1.2rem;
+
+}
+.line{
+  background-color: rgb(53, 191, 233);
+  height: 1.3px;
+  width: 12rem;
+  margin-left: 30rem;
+  margin-top: 0.5rem;
+}
+.inner-box{
+  /* height: 30rem; */
+  /* width: 40%; */
+  /* background-color: rgb(190, 8, 8); */
+ position:absolute;
+ margin-top: 12.5rem;
+margin-left:5rem;
+/* background-image: url(../src/componentes/images1/RS.png); */
 }
