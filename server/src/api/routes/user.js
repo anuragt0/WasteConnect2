@@ -81,12 +81,24 @@ router.post("/verify-token", fetchPerson, async (req, res) => {
 
     return res
       .status(200)
-      .json({success: true, message: "User verified" });
+      .json({success: true, message: "User verified", userDoc: userDoc });
   } catch (error) {
     console.error(error.message);
     res.status(500).json({success: false, message: "User not verified" });
   }
 });
+
+router.post("/get-user", async(req,res)=>{
+    const userId = req.body.userId;
+    try {
+        const userDoc = await User.findById(userId);
+        res.status(200).json({success: true, message: "User retrieved successfully", userDoc: userDoc});
+        
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({success: false, message: "User not verified" });
+    }
+})
 
 
 //Placing a sell order
