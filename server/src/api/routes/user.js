@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
 
     // generate token
     const data = {
-      exp: Math.floor(Date.now() / 1000) + 60*60*12,
+      exp: Math.floor(Date.now() / 1000) + 60*60*122,
       person: {
         mongoId: userDoc._id,
       },

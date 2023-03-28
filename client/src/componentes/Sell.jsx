@@ -60,20 +60,21 @@ const Sell = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/user/buy-order`,
+        `http://localhost:5000/api/user/sell-order`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             // "auth-token": localStorage.getItem("token"),
-            "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzk5ODA1ODMsInBlcnNvbiI6eyJtb25nb0lkIjoiNjQyMWJiZTY1ODYwNDBmZjYwMmE3NmU1In0sImlhdCI6MTY3OTkzNzM4M30.jlXqPLXInw2CaMBzuYGdfLvFkMSWEzfbNXMuDadkqvU",
+            "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODA0MjU3ODUsInBlcnNvbiI6eyJtb25nb0lkIjoiNjQyMjgxODI5ODY5ZWE1NjY5MTA5YzYwIn0sImlhdCI6MTY3OTk4NjU4NX0.NWHhLBpo8FsB6yq5lCI_iY532ZRhQEHIw7wKo5_-7ME",
           },
           body: JSON.stringify(newOrder),
         }
       );
 
       const data = await response.json();
-      console.log(data);
+      console.log("data ", data);
+      setNewOrder({});
 
       refClose.current.click();
     } catch (error) {
@@ -265,7 +266,7 @@ const Sell = () => {
             </div>
             <div className="modal-body">
               <p>Name: {userDoc.name!=undefined?userDoc.name: "NA"}</p>
-              <p>UserId: {userDoc.userId!=undefined?userDoc.name: "NA"}</p>
+              <p>UserId: {userDoc.userId!=undefined?userDoc.userId: "NA"}</p>
               <p>phone: {userDoc.phone!=undefined?userDoc.phone: "NA"}</p>
               <p>email: {userDoc.email!=undefined?userDoc.email: "NA"}</p>
               <p>aadhaar: {userDoc.aadhaar!=undefined?userDoc.aadhaar: "NA"}</p>
@@ -283,7 +284,7 @@ const Sell = () => {
                 Close
               </button>
               <button
-                onClick={handlePlaceOrder}
+                onClick={()=>{ref2.current.click()}}
                 type="button"
                 className="btn btn-primary"
               >
