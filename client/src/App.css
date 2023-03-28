@@ -12,9 +12,9 @@ body {
 .head {
   padding: 0 10%;
   color: black;
-  position:fixed;
+  
   background-color: white;
-  z-index: 99;
+  
 }
 .container {
   max-width: 100%;
@@ -62,7 +62,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
-  padding: 0 30px;
+  padding: 0 3%;
   background-color:#2b4416;
   box-shadow: 0 5p 15px rgba(0, 0, 0, 0.25);
   width: 95%;
@@ -86,7 +86,7 @@ body {
 .nav-menu a{
   text-decoration: none;
   color: #fdea9e;
-  padding: 0.4rem 0.6rem;
+  padding: 0rem 0.2rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
  li:hover{
@@ -101,8 +101,8 @@ body {
   box-sizing: border-box;
   border: 1.5px solid white;
   border-radius: 100px;
-  margin-right: 1rem;
-  margin-left: 3rem;
+  margin-right:1rem;
+  margin-left: 2rem;
   font-size: 15px;
 }
 .login:hover{
