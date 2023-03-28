@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { useNavigate } from "react-router-dom";
+
 
 const Sell = () => {
+    const navigate = useNavigate();
     const ref = useRef(null);
     const refClose = useRef(null);
     const ref2 = useRef(null);
@@ -12,6 +15,32 @@ const Sell = () => {
     const [userDoc, setUserDoc] = useState({});
 
     useEffect(() => {
+
+        async function validateLogin(){
+            try {
+                const response = await fetch(
+                    `http://localhost:5000/api/user/verify-token`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "auth-token": localStorage.getItem("token")
+                        },
+                    }
+                );
+                const result = await response.json();
+                if(result.success===false)
+                    navigate('/login');
+                
+                console.log(result);
+
+
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+        validateLogin();
+
         async function getAllBuyOrders() {
             try {
                 const response = await fetch(
@@ -265,14 +294,14 @@ const Sell = () => {
               </button>
             </div>
             <div className="modal-body">
-              <p>Name: {userDoc.name!=undefined?userDoc.name: "NA"}</p>
-              <p>UserId: {userDoc.userId!=undefined?userDoc.userId: "NA"}</p>
-              <p>phone: {userDoc.phone!=undefined?userDoc.phone: "NA"}</p>
-              <p>email: {userDoc.email!=undefined?userDoc.email: "NA"}</p>
-              <p>aadhaar: {userDoc.aadhaar!=undefined?userDoc.aadhaar: "NA"}</p>
-              <p>address: {userDoc.address!=undefined?userDoc.address: "NA"}</p>
-              <p>city: {userDoc.city!=undefined?userDoc.city: "NA"}</p>
-              <p>pincode: {userDoc.pincode!=undefined?userDoc.pincode: "NA"}</p>
+              <p>Name: {userDoc.name!==undefined?userDoc.name: "NA"}</p>
+              <p>UserId: {userDoc.userId!==undefined?userDoc.userId: "NA"}</p>
+              <p>phone: {userDoc.phone!==undefined?userDoc.phone: "NA"}</p>
+              <p>email: {userDoc.email!==undefined?userDoc.email: "NA"}</p>
+              <p>aadhaar: {userDoc.aadhaar!==undefined?userDoc.aadhaar: "NA"}</p>
+              <p>address: {userDoc.address!==undefined?userDoc.address: "NA"}</p>
+              <p>city: {userDoc.city!==undefined?userDoc.city: "NA"}</p>
+              <p>pincode: {userDoc.pincode!==undefined?userDoc.pincode: "NA"}</p>
             </div>
             <div className="modal-footer">
               <button
@@ -336,7 +365,7 @@ const Sell = () => {
                                         <td>{order.quantity}</td>
                                         <td>{order.valid_upto}</td>
                                         <td style={{ color: "green" }}>{order.status}</td>
-                                        <button class="btn btn-primary" style={{color:"white", backgroundColor: "blue"}} onClick={()=>{handleSell(order.buyer_id)}}>Sell</button>
+                                        <button className="btn btn-primary" style={{color:"white", backgroundColor: "blue"}} onClick={()=>{handleSell(order.buyer_id)}}>Sell</button>
                                     </tr>
                                 )
                             })

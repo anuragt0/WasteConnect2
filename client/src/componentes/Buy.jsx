@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { useNavigate } from "react-router-dom";
+
 
 const Sell = () => {
+    const navigate = useNavigate();
+
     const ref = useRef(null);
     const refClose = useRef(null);
     const ref2 = useRef(null);
@@ -12,6 +16,33 @@ const Sell = () => {
     const [userDoc, setUserDoc] = useState({});
 
     useEffect(() => {
+
+        async function validateLogin(){
+            try {
+                const response = await fetch(
+                    `http://localhost:5000/api/user/verify-token`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "auth-token": localStorage.getItem("token")
+                        },
+                    }
+                );
+                const result = await response.json();
+                if(result.success===false)
+                    navigate('/login');
+                
+                console.log(result);
+
+
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+        validateLogin();
+
+
         async function getAllSellOrders() {
             try {
                 const response = await fetch(
@@ -331,7 +362,7 @@ const Sell = () => {
                                         <td>{order.quantity}</td>
                                         <td>{order.valid_upto}</td>
                                         <td style={{ color: "green" }}>{order.status}</td>
-                                        <button class="btn btn-primary" style={{color:"white", backgroundColor: "blue"}} onClick={()=>{handleBuy(order.seller_id)}}>Buy</button>
+                                        <button className="btn btn-primary" style={{color:"white", backgroundColor: "blue"}} onClick={()=>{handleBuy(order.seller_id)}}>Buy</button>
                                     </tr>
                                 )
                             })

@@ -95,8 +95,8 @@ const Home = () => {
     <div className="block">
      <h1>Contact Us</h1> 
     </div>
-    <div className="page4">
-      <section className="contactS">
+    <div className="page4" id='contact'>
+      <section className="contactS" >
     <div className="container4">
         <div className="contactinfo">
 

@@ -1,7 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "./images1/wc.png";
 import "../App.css";
 const Navbar = () => {
+
+    const [isLogggedin, setIsloggedin] = useState(false);
+
+useEffect(() => {
+
+    async function validateLogin(){
+            try {
+                const response = await fetch(
+                    `http://localhost:5000/api/user/verify-token`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "auth-token": localStorage.getItem("token")
+                        },
+                    }
+                );
+                const result = await response.json();
+                console.log(result);
+                setIsloggedin(result.success);
+
+
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+        validateLogin();
+}, [])
+
+
   return (
     <>
       <section className="head">
@@ -25,48 +55,59 @@ const Navbar = () => {
             <nav className="NavbarItems">
               <ul className="nav-menu">
                 <li>
-                  <a className="ic" href="#">
+                  <a className="ic" href="/">
                     <i className="fa-solid fa-house-user"></i>
                      Home
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/services/buy">
                     <i className="fa-solid fa-truck"></i>
                     Buy
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/services/sell">
                     <i className="fa-solid fa-truck"></i>
                     Sell
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/services">
                     <i className="fa-solid fa-briefcase"></i>
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="#contact">
                     <i className="fa-solid fa-address-book"></i>
                    Contact
                   </a>
                 </li>
                 <div className="oth">
-                <li>
-                  <a className="login" href="#">
-                   
-                    Log In
-                  </a>
-                </li>
-                <li>
-                  <a className="signup" href="#">
+                 
+                {!isLogggedin?
+                    <><li>
+                    <a className="login" href="/login">
+                        Log In
+                    </a>
+                    </li>
+                    <li>
+                    <a className="signup" href="/register">
+                        Register
+                    </a>
+                    </li></>
+                : <li>
+                    <a className="login" href="/" onClick={()=>{ 
+                        localStorage.removeItem('token');
+                        
+                    }}>
+                        Logout
+                    </a>
+                    </li>
+                }
                     
-                    Sign Up
-                  </a>
-                </li>
+                
                 </div>
                 </ul>
             </nav>
