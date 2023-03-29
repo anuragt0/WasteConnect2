@@ -16,21 +16,45 @@ const Home = () => {
   return (
     <>
 
-    <div className="h">
-    <div className="border">
-    </div>
-   <div className="left">
+  <div className="h">
+    <div className="left">
     <h1>WasteConnect India</h1>
     <p>"Linking farmers and <br/> industries for sustainable <br/> waste management"</p>
-   </div>
+    </div>
+    <div className="border">
+    </div>
+    {/* <div className="right">
+      <h2>Latest Initiatives</h2>
+   </div> */}
+  </div>
 
-   <div className="right">
-      <h2>News/Alerts</h2>
-   </div>
+  <div className="cards">
+    <div className="card1">
+      <div className="circle">
+  
+      </div>
+      <h5 style={{marginTop:"2%",marginLeft:"47%",color:"white"}}>FPO's</h5>
+      <p style={{marginLeft:"16%", color:"white"}}>FARMERS PRODUCERS ORGANISATIONS</p>
+    </div>
+    <div className="card2">
+      <div className="circle" >
+      </div>
+      <h5 style={{marginTop:"2%",marginLeft:"35%",color:"white"}}>Kisan call center</h5>
+      <p style={{marginLeft:"35%", color:"white"}}>DIAL 1800 180 1551</p>
+    </div>
+    <div className="card3">
+      <div className="circle">
+      </div>
+      <h5 style={{marginTop:"2%",marginLeft:"38%",color:"white"}}>AWARENESS</h5>
+      <p style={{marginLeft:"26%", color:"white"}}>TECHNICAL LITERATE FARMER</p>
+    </div>
+  </div>
+
+  <div className="box1">
    <div className="services">
       <h1>OUR SERVICES</h1>
     </div>
-</div>
+    </div>
 
     <div className="page2">
     
