@@ -100,7 +100,7 @@ useEffect(() => {
                 : <li>
                     <a className="login" href="/" onClick={()=>{ 
                         localStorage.removeItem('token');
-                        
+
                     }}>
                         Logout
                     </a>

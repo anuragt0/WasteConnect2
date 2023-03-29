@@ -9,6 +9,8 @@ import Buy from "./componentes/Buy";
 import Services from "./componentes/Services";
 import Login from './componentes/Login';
 import Register from './componentes/Register';
+import Rental from "./componentes/Rental";
+import Weather from './componentes/Weather';
 import "./App.css";
 
 function App() {
@@ -19,11 +21,13 @@ function App() {
             <div>
                 <Routes>
                     <Route exact path='/' element={<Home/>}/>
-                    <Route exact path='/services/sell' element={<Sell/>}/>
-                    <Route exact path='/services/buy' element={<Buy/>}/>
                     <Route exact path='/login' element={<Login/>}/>
                     <Route exact path='/register' element={<Register/>}/>
                     <Route exact path='/services' element={<Services/>}/>
+                    <Route exact path='/services/sell' element={<Sell/>}/>
+                    <Route exact path='/services/buy' element={<Buy/>}/>
+                    <Route exact path='/services/weather-updates' element={<Weather/>}/>
+                    <Route exact path='/services/rental-service' element={<Rental/>}/>
                 </Routes>
             </div>
         </Router>
