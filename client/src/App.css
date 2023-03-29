@@ -61,37 +61,37 @@ body{
 /*-------------------2nd navbar------------------------*/
 
 .NavbarItems{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: flex-start; */
+  align-items:center;
   font-size: 1.2rem;
-  padding: 0 3%;
+  padding: 2% 3%;
   background-color:#2b4416;
   box-shadow: 0 5p 15px rgba(0, 0, 0, 0.25);
-  width: 100%;
+  width: 110%;
   height:70px;
   border-radius: 10px;
-  margin-left: 3%;
+  margin-left: 0%;
   margin-bottom: 1%;
   
 }
 .nav-menu{
   display: grid;
   grid-template-columns: repeat(7, auto);
-  grid-gap:10px;
+  grid-gap:12px;
   align-items: center;
   list-style: none;
   text-align: center;
-  justify-content: end;
+  justify-content: start;
+  /* justify-content: end; */
 }
 .fa-solid{
-  padding-right: 5px;
+  padding-right: 4px;
 }
 .nav-menu a{
   text-decoration: none;
   color: #fdea9e;
-  padding: 0.2rem 0.2rem;
-  
+  padding: 0.3rem 0.5rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
  li:hover{
@@ -106,9 +106,10 @@ body{
   box-sizing: border-box;
   border: 1.5px solid white;
   border-radius: 100px;
-  margin-right:2rem;
-  margin-left: 4rem;
+  margin-right:1.5rem;
+  margin-left: 1.5rem;
   font-size: 15px;
+
 }
 .login:hover{
   background-color: #fff;
