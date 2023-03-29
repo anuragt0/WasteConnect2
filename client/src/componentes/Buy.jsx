@@ -309,7 +309,7 @@ const Sell = () => {
                                 Close
                             </button>
                             <button
-                                onClick={handlePlaceOrder}
+                                onClick={()=>{refClose2.current.click()}}
                                 type="button"
                                 className="btn btn-primary"
                             >
@@ -340,7 +340,7 @@ const Sell = () => {
                 <div class="collapse my-3" id="collapseExample">
                     <div class="card card-body">
                         <div>
-                            <h4>Still can't find your desired Seller? PLACE A BUY ORDER.</h4>
+                        <h4>Still can't find your desired Buyer? <span style={{color:"green", fontWeight: "bold"}}>Place a sell order</span>.</h4>
                             <h5>Info: You'll will be notified once a Seller wants to reach you.</h5>
                             <button className='btn btn-primary' onClick={() => ref.current.click()}>Place order</button>
                         </div>

@@ -243,9 +243,23 @@ router.delete("/delete-buy-order/:orderId", async(req,res)=>{
     }
 })
 
-router.post("/add-rental-service", async (req,res)=>{
-    const data = req.body;
+router.get("/get-rental-services", async (req, res)=>{
     try {
+        const allServices = await RentalService.find();
+        res.status(200).json({success: true, message: "Rental services fetched successfully", allServices: allServices});
+    } catch (error) {
+        console.log(error.message, " ", "get-rental-service");
+        return res.status(501).json({success: false, message: "Internal server error" })
+    }
+})
+
+router.post("/add-rental-service", fetchPerson, async (req,res)=>{
+    //name is added automatically from auth-token
+    const data = req.body;
+    const userId = req.mongoId;
+    try {
+        const userDoc = await User.findById(userId);
+        data.owner = userDoc.name
         const rentalService = await RentalService(data);
         await rentalService.save();
         res.status(200).json({success:true, message: "Rental service added successfully"})

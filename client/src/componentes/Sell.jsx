@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Sell = () => {
+
     const navigate = useNavigate();
     const ref = useRef(null);
     const refClose = useRef(null);
