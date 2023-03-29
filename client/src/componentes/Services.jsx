@@ -72,6 +72,22 @@ const Services = () => {
           </button>
         </div>
       </div>
+      <div className="card my-5 mx-3">
+        <div className="card-body">
+          <h5 className="card-title">Goverment Schemes</h5>
+          <p className="card-text">
+            Browse all Goverment related Schemes and make most out of them .
+          </p>
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              navigate("/services/weather-updates");
+            }}
+          >
+            Browse Schemes
+          </button>
+        </div>
+      </div>
     </div>
 
       

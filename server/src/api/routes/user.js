@@ -106,8 +106,10 @@ router.post("/sell-order", fetchPerson, async (req,res)=>{
     //must have auth-token in header
     const sellOrder = req.body;
     const seller_id = req.mongoId;
+    console.log(seller_id);
     try {
         const userDoc = await User.findById(seller_id);
+        console.log(userDoc);
         sellOrder.seller_id = seller_id;
         sellOrder.seller_name = userDoc.name;
         const newOrder = new SellOrder(sellOrder);
@@ -179,6 +181,7 @@ router.post("/buy-order", fetchPerson, async (req,res)=>{
 
     try {
         const userDoc = await User.findById(buyer_id);
+        // console.log(userDoc);
         buyOrder.buyer_name = userDoc.name;
         buyOrder.buyer_id = buyer_id;
         const newOrder = new BuyOrder(buyOrder);

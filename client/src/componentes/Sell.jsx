@@ -94,8 +94,7 @@ const Sell = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // "auth-token": localStorage.getItem("token"),
-            "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODA0MjU3ODUsInBlcnNvbiI6eyJtb25nb0lkIjoiNjQyMjgxODI5ODY5ZWE1NjY5MTA5YzYwIn0sImlhdCI6MTY3OTk4NjU4NX0.NWHhLBpo8FsB6yq5lCI_iY532ZRhQEHIw7wKo5_-7ME",
+            "auth-token": localStorage.getItem("token"),
           },
           body: JSON.stringify(newOrder),
         }
@@ -123,8 +122,7 @@ const Sell = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // "auth-token": localStorage.getItem("token"),
-            "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODAwMjQxNzQsInBlcnNvbiI6eyJtb25nb0lkIjoiNjQyMTNiZTk3NmE0YzVjODZhYTkzYWI0In0sImlhdCI6MTY3OTk4MDk3NH0.-XJbWWm519hV5ZHBCA0gClK7VRF8l24UG5iqE_CSHKA",
+            "auth-token": localStorage.getItem("token"),
           },
           body: JSON.stringify(bodyy),
         }
@@ -167,7 +165,7 @@ const Sell = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Add a new vertical
+                Place your sell order
               </h5>
               <button
                 type="button"
@@ -294,14 +292,14 @@ const Sell = () => {
               </button>
             </div>
             <div className="modal-body">
-              <p>Name: {userDoc.name!==undefined?userDoc.name: "NA"}</p>
-              <p>UserId: {userDoc.userId!==undefined?userDoc.userId: "NA"}</p>
-              <p>phone: {userDoc.phone!==undefined?userDoc.phone: "NA"}</p>
-              <p>email: {userDoc.email!==undefined?userDoc.email: "NA"}</p>
-              <p>aadhaar: {userDoc.aadhaar!==undefined?userDoc.aadhaar: "NA"}</p>
-              <p>address: {userDoc.address!==undefined?userDoc.address: "NA"}</p>
-              <p>city: {userDoc.city!==undefined?userDoc.city: "NA"}</p>
-              <p>pincode: {userDoc.pincode!==undefined?userDoc.pincode: "NA"}</p>
+            <p> <span style={{fontWeight: "bold"}}>Name</span> : <span style={{color: "#0B2447"}}>{userDoc.name!==undefined?userDoc.name: "NA"}</span></p>
+              <p><span style={{fontWeight: "bold"}}>UserId</span>: <span style={{color: "#0B2447"}}>{userDoc.userId!==undefined?userDoc.userId: "NA"}</span> </p>
+              <p><span style={{fontWeight: "bold"}}>Phone</span>: <span style={{color: "#0B2447"}}>{userDoc.phone!==undefined?userDoc.phone: "NA"}</span> </p>
+              <p><span style={{fontWeight: "bold"}}>email</span>: <span style={{color: "#0B2447"}}>{userDoc.email!==undefined?userDoc.email: "NA"}</span></p>
+              <p><span style={{fontWeight: "bold"}}>Info</span>: <span style={{color: "#0B2447"}}>{userDoc.info!==undefined?userDoc.info: "NA"}</span> </p>
+              <p><span style={{fontWeight: "bold"}}>Address</span>: <span style={{color: "#0B2447"}}>{userDoc.address!==undefined?userDoc.address: "NA"}</span> </p>
+              <p><span style={{fontWeight: "bold"}}>City</span>: <span style={{color: "#0B2447"}}>{userDoc.city!==undefined?userDoc.city: "NA"}</span> </p>
+              <p><span style={{fontWeight: "bold"}}>Pincode</span>: <span style={{color: "#0B2447"}}>{userDoc.pincode!==undefined?userDoc.pincode: "NA"}</span> </p>
             </div>
             <div className="modal-footer">
               <button
@@ -336,6 +334,20 @@ const Sell = () => {
                 <h2>Find a buyer in a blink of eye</h2>
 
                 <hr />
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Can't find?
+                    </button>
+                </p>
+                <div class="collapse my-3" id="collapseExample">
+                    <div class="card card-body">
+                        <div>
+                            <h4>Still can't find your desired seller? <span style={{color:"green", fontWeight: "bold"}}>Place a buy order</span>.</h4>
+                            <h5>Info: You'll will be notified once a Buyer wants to reach you.</h5>
+                            <button className='btn btn-primary' onClick={() => ref.current.click()}>Place order</button>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Filter */}
                 <div className="input-group mb-3" style={{ textAlign: "center" }} >
@@ -373,9 +385,7 @@ const Sell = () => {
                     </tbody>
                 </table>
 
-                <h4>Still can't find your desired buyer? Place a sell order.</h4>
-                <h5>Info: You'll will be notified once a buyer wants to reach you.</h5>
-                <button className='btn btn-primary' onClick={()=>ref.current.click()}>Place order</button>
+                
             </div>
         </>
 
