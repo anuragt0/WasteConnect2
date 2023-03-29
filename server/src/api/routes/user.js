@@ -106,8 +106,10 @@ router.post("/sell-order", fetchPerson, async (req,res)=>{
     //must have auth-token in header
     const sellOrder = req.body;
     const seller_id = req.mongoId;
+    console.log(seller_id);
     try {
         const userDoc = await User.findById(seller_id);
+        console.log(userDoc);
         sellOrder.seller_id = seller_id;
         sellOrder.seller_name = userDoc.name;
         const newOrder = new SellOrder(sellOrder);
@@ -179,6 +181,7 @@ router.post("/buy-order", fetchPerson, async (req,res)=>{
 
     try {
         const userDoc = await User.findById(buyer_id);
+        // console.log(userDoc);
         buyOrder.buyer_name = userDoc.name;
         buyOrder.buyer_id = buyer_id;
         const newOrder = new BuyOrder(buyOrder);
@@ -240,9 +243,23 @@ router.delete("/delete-buy-order/:orderId", async(req,res)=>{
     }
 })
 
-router.post("/add-rental-service", async (req,res)=>{
-    const data = req.body;
+router.get("/get-rental-services", async (req, res)=>{
     try {
+        const allServices = await RentalService.find();
+        res.status(200).json({success: true, message: "Rental services fetched successfully", allServices: allServices});
+    } catch (error) {
+        console.log(error.message, " ", "get-rental-service");
+        return res.status(501).json({success: false, message: "Internal server error" })
+    }
+})
+
+router.post("/add-rental-service", fetchPerson, async (req,res)=>{
+    //name is added automatically from auth-token
+    const data = req.body;
+    const userId = req.mongoId;
+    try {
+        const userDoc = await User.findById(userId);
+        data.owner = userDoc.name
         const rentalService = await RentalService(data);
         await rentalService.save();
         res.status(200).json({success:true, message: "Rental service added successfully"})

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
@@ -67,7 +67,7 @@ const Login = (props) => {
           <div className="text-center text-lg-start mt-4 pt-2">
             <button type="button" className="btn btn-primary btn-lg" onClick={handleSubmit}
               >Login</button>
-            <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/signup"
+            <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/register"
                 className="link-danger">Register</Link></p>
           </div>
 

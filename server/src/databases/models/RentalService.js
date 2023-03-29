@@ -6,6 +6,10 @@ const RentalSchemaa = mongoose.Schema({
     type: String,
     required: true
   },
+  imgSrc:{
+    type: String,
+    default: "https://www.cimmyt.org/content/uploads/2020/06/CIMMYT-Mechanization-ZIM-20122017-0005.jpg"
+  },
   description:{
     type: String,
   },
@@ -19,8 +23,8 @@ const RentalSchemaa = mongoose.Schema({
     type: Number,
     required: true
   },
-  contact: {
-    type: Number,
+  phone: {
+    type: String,
     required: true,
   },
   email: {

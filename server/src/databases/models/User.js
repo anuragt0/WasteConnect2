@@ -18,7 +18,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  aadhaar:{
+  info:{
     type: String
   },
  
