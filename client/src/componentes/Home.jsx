@@ -10,6 +10,9 @@ import twit from "../componentes/images1/twitter.png";
 import location from "../componentes/images1/location.png";
 import gmail from "../componentes/images1/gmail.png";
 import phone from "../componentes/images1/phone.png";
+import fpo from "../componentes/images1/fpo.png";
+import fpo1 from "../componentes/images1/fpo1.png";
+import fpo2 from "../componentes/images1/fpo2.png";
 import "../css/contact.css";
 
 const Home = () => {
@@ -18,10 +21,16 @@ const Home = () => {
 
   <div className="h">
     <div className="left">
+      
     <h1>WasteConnect India</h1>
-    <p>"Linking farmers and <br/> industries for sustainable <br/> waste management"</p>
+    <p>"Linking farmers and industries for sustainable <br/> waste management"</p>
+    
     </div>
+    
     <div className="border">
+    <div className="btn3">
+<h5>Know More</h5>
+    </div>
     </div>
     {/* <div className="right">
       <h2>Latest Initiatives</h2>
@@ -30,22 +39,24 @@ const Home = () => {
 
   <div className="cards">
     <div className="card1">
-      <div className="circle">
-  
+      <div className="img1">
+  <img src={fpo} style={{height:"7rem", width:"50%", marginLeft:"26%"}}/>
       </div>
-      <h5 style={{marginTop:"2%",marginLeft:"47%",color:"white"}}>FPO's</h5>
+      <h5 style={{marginLeft:"47%",color:"white"}}>FPO's</h5>
       <p style={{marginLeft:"16%", color:"white"}}>FARMERS PRODUCERS ORGANISATIONS</p>
     </div>
     <div className="card2">
-      <div className="circle" >
+    <div className="img2">
+  <img src={fpo1} style={{height:"7rem", width:"50%", marginLeft:"26%"}}/>
       </div>
-      <h5 style={{marginTop:"2%",marginLeft:"35%",color:"white"}}>Kisan call center</h5>
+      <h5 style={{marginLeft:"35%",color:"white"}}>Kisan call center</h5>
       <p style={{marginLeft:"35%", color:"white"}}>DIAL 1800 180 1551</p>
     </div>
     <div className="card3">
-      <div className="circle">
+    <div className="img3">
+  <img src={fpo2} style={{height:"7rem", width:"50%", marginLeft:"26%"}}/>
       </div>
-      <h5 style={{marginTop:"2%",marginLeft:"38%",color:"white"}}>AWARENESS</h5>
+      <h5 style={{marginLeft:"38%",color:"white"}}>AWARENESS</h5>
       <p style={{marginLeft:"26%", color:"white"}}>TECHNICAL LITERATE FARMER</p>
     </div>
   </div>
