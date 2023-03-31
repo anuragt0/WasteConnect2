@@ -381,6 +381,96 @@ const Sell = () => {
                                 )
                             })
                         }
+                        {
+                            orders2.map((order) => {
+                                return (
+                                    <tr className='my-3' >
+                                        <th scope='row'>{num++}</th>
+                                        <td>{order.seller_name}</td>
+                                        <td>{order.residue_type}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>{order.valid_upto}</td>
+                                        <td style={{ color: "green" }}>{order.status}</td>
+                                        <button className="btn btn-primary" style={{ color: "white", backgroundColor: "blue" }} onClick={() => { handleBuy(order.seller_id) }}>Buy</button>
+                                    </tr>
+                                )
+                            })
+                        }
+                        {
+                            orders2.map((order) => {
+                                return (
+                                    <tr className='my-3' >
+                                        <th scope='row'>{num++}</th>
+                                        <td>{order.seller_name}</td>
+                                        <td>{order.residue_type}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>{order.valid_upto}</td>
+                                        <td style={{ color: "green" }}>{order.status}</td>
+                                        <button className="btn btn-primary" style={{ color: "white", backgroundColor: "blue" }} onClick={() => { handleBuy(order.seller_id) }}>Buy</button>
+                                    </tr>
+                                )
+                            })
+                        }
+                        {
+                            orders2.map((order) => {
+                                return (
+                                    <tr className='my-3' >
+                                        <th scope='row'>{num++}</th>
+                                        <td>{order.seller_name}</td>
+                                        <td>{order.residue_type}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>{order.valid_upto}</td>
+                                        <td style={{ color: "green" }}>{order.status}</td>
+                                        <button className="btn btn-primary" style={{ color: "white", backgroundColor: "blue" }} onClick={() => { handleBuy(order.seller_id) }}>Buy</button>
+                                    </tr>
+                                )
+                            })
+                        }
+                        {
+                            orders2.map((order) => {
+                                return (
+                                    <tr className='my-3' >
+                                        <th scope='row'>{num++}</th>
+                                        <td>{order.seller_name}</td>
+                                        <td>{order.residue_type}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>{order.valid_upto}</td>
+                                        <td style={{ color: "green" }}>{order.status}</td>
+                                        <button className="btn btn-primary" style={{ color: "white", backgroundColor: "blue" }} onClick={() => { handleBuy(order.seller_id) }}>Buy</button>
+                                    </tr>
+                                )
+                            })
+                        }
+                        {
+                            orders2.map((order) => {
+                                return (
+                                    <tr className='my-3' >
+                                        <th scope='row'>{num++}</th>
+                                        <td>{order.seller_name}</td>
+                                        <td>{order.residue_type}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>{order.valid_upto}</td>
+                                        <td style={{ color: "green" }}>{order.status}</td>
+                                        <button className="btn btn-primary" style={{ color: "white", backgroundColor: "blue" }} onClick={() => { handleBuy(order.seller_id) }}>Buy</button>
+                                    </tr>
+                                )
+                            })
+                        }
+                        {
+                            orders2.map((order) => {
+                                return (
+                                    <tr className='my-3' >
+                                        <th scope='row'>{num++}</th>
+                                        <td>{order.seller_name}</td>
+                                        <td>{order.residue_type}</td>
+                                        <td>{order.quantity}</td>
+                                        <td>{order.valid_upto}</td>
+                                        <td style={{ color: "green" }}>{order.status}</td>
+                                        <button className="btn btn-primary" style={{ color: "white", backgroundColor: "blue" }} onClick={() => { handleBuy(order.seller_id) }}>Buy</button>
+                                    </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </table>
                 
