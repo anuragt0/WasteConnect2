@@ -332,7 +332,7 @@ const Sell = () => {
         {Modal2}
             <div style={{ textAlign: "center", "margin": "10%" }}>
 
-                <h2>Find a buyer in a blink of eye</h2>
+                <h2>SELL your product</h2>
 
                 <hr />
                 <p>

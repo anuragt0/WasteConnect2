@@ -11,6 +11,10 @@ import Login from './componentes/Login';
 import Register from './componentes/Register';
 import Rental from "./componentes/Rental";
 import Weather from './componentes/Weather';
+import Awareness from './componentes/Awareness';
+import Video from './componentes/Video';
+
+
 import "./App.css";
 
 function App() {
@@ -28,6 +32,10 @@ function App() {
                     <Route exact path='/services/buy' element={<Buy/>}/>
                     <Route exact path='/services/weather-updates' element={<Weather/>}/>
                     <Route exact path='/services/rental-service' element={<Rental/>}/>
+                    <Route exact path='/awareness' element={<Awareness/>}/>
+                    <Route exact path='/awareness/video/:vdoSrc' element={<Video/>}/>
+
+
                 </Routes>
             </div>
         </Router>

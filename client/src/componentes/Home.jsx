@@ -1,5 +1,13 @@
 import React from 'react'
 import "../App.css";
+import ReactLanguageSelect from 'react-languages-select';
+ 
+//import css module
+import 'react-languages-select/css/react-languages-select.css';
+ 
+//OR import sass module
+// import 'react-languages-select/scss/react-languages-select.scss';
+
 import RS from "../componentes/images1/RS.png";
 import SP from "../componentes/images1/SP.png";
 import BP from "../componentes/images1/BP.png";
@@ -16,9 +24,15 @@ import fpo2 from "../componentes/images1/fpo2.png";
 import "../css/contact.css";
 
 const Home = () => {
+
   return (
     <>
 
+
+     <ReactLanguageSelect
+    searchable={true}
+    searchPlaceholder="Search for a language" />
+    
   <div className="h">
     <div className="left">
       
@@ -56,7 +70,7 @@ const Home = () => {
     <div className="img3">
   <img src={fpo2} style={{height:"7rem", width:"50%", marginLeft:"26%"}}/>
       </div>
-      <h5 style={{marginLeft:"38%",color:"white"}}>AWARENESS</h5>
+      <h5 style={{marginLeft:"38%",color:"white"}}> <a href="/awareness">AWARENESS</a> </h5>
       <p style={{marginLeft:"26%", color:"white"}}>TECHNICAL LITERATE FARMER</p>
     </div>
   </div>

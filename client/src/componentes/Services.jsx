@@ -78,14 +78,7 @@ const Services = () => {
           <p className="card-text">
             Browse all Goverment related Schemes and make most out of them .
           </p>
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              navigate("/services/weather-updates");
-            }}
-          >
-            Browse Schemes
-          </button>
+          <a href={"https://agricoop.nic.in/en/Major#gsc.tab=0"}>Browse Schemes</a>
         </div>
       </div>
     </div>
